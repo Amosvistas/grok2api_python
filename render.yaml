@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: grok2api
+    runtime: python
+    buildCommand: pip install flask requests curl_cffi werkzeug loguru
+    startCommand: python app.py
+    envVars:
+      - key: PORT
+        value: 3000
+      - key: API_KEY
+        value: sk-123456
+      - key: MANAGER_SWITCH
+        value: "true"
+      - key: ADMINPASSWORD
+        value: admin123
+      - key: IS_TEMP_CONVERSATION
+        value: "true"
+      - key: ISSHOW_SEARCH_RESULTS
+        value: "false"
+      - key: SHOW_THINKING
+        value: "true"
+      - key: IS_CUSTOM_SSO
+        value: "false"
+      - key: SSO
+        sync: false
